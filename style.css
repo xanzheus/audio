@@ -160,3 +160,17 @@ body {
     transition: ease-in 0.3s;
     outline: solid;
 }
+
+.link-container {
+    margin-top: 30px;
+}
+
+.link-container a{
+    text-decoration: none;
+    border-bottom: 1px solid black;
+
+}
+
+.link-container a:hover {
+    border-bottom: 2px solid black;
+}
