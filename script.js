@@ -7,6 +7,8 @@ const progress = document.querySelector('.progress')
 const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
+const audioFileInput = document.querySelector('#audio-file')
+
 
 // song titles
 const songs = ['Bhajan 1', 'Bhajan 2', 'Bhajan 3', 'Bhajan 4', 'Bhajan 5', 'Bhajan 6', 'Bhajan 7', 'Bhajan 8', 'Bhajan 9', 'Bhajan 10']
@@ -88,6 +90,15 @@ playBtn.addEventListener('click', ()=> {
     }
 })
 
+
+function setComputerFile(e) {
+    window.URL = window.URL || window.webkitURL || window.mozURL;
+    var url = URL.createObjectURL(this.files[0]);
+    title.innerText = this.files[0].name
+    audio.src = url
+    playSong();
+}
+
 //Change song events
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
@@ -96,3 +107,5 @@ audio.addEventListener('timeupdate', updateProgress)
 progressContainer.addEventListener('click', setProgress)
 
 audio.addEventListener('ended', nextSong)
+
+audioFileInput.addEventListener('change', setComputerFile)
