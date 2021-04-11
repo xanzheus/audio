@@ -25,6 +25,11 @@ body {
     margin: 100px 0;
     z-index: 10;
 }
+.img-container {
+    position: relative;
+    width: 110px;
+}
+
 .img-container::after{
     content: '';
     background-color: #fff;
@@ -37,6 +42,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
 .img-container img {
     width: inherit;
     height: 110px;
@@ -45,10 +51,12 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-
     animation: rotate 10s linear infinite;
-
     animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running;
 }
 
 @keyframes rotate {
@@ -91,6 +99,36 @@ body {
     position: absolute;
     top: 0;
     left: 20px;
-    width: calc( 100% - 40px);
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+
 }
 
+.music-info h4 {
+    margin: 0;
+}
+
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
