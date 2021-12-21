@@ -11,7 +11,7 @@ const audioFileInput = document.querySelector('#audio-file')
 
 
 // song titles
-const songs = ['Bhajan 1', 'Bhajan 2', 'Bhajan 3', 'Bhajan 4', 'Bhajan 5', 'Bhajan 6', 'Bhajan 7', 'Bhajan 8', 'Bhajan 9', 'Bhajan 10']
+const songs = ['Aminé - Reel It In (Lyrics)(MP3_160K)', 'Bhajan 2', 'Bhajan 3', 'Bhajan 4', 'Bhajan 5', 'Bhajan 6', 'Bhajan 7', 'Bhajan 8', 'Bhajan 9', 'Bhajan 10']
 
 //keep track of songs
 var songIndex = 2
